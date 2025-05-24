@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-home-service
+  namespace: demo-app
+spec:
+  selector:
+    app: nginx-home
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

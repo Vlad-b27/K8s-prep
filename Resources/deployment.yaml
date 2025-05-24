@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-home
+  namespace: demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-home
+  template:
+    metadata:
+      labels:
+        app: nginx-home
+    spec:
+      containers:
+      - name: nginx
+        image: localhost:32000/mynginx:registry
+        ports:
+        - containerPort: 80
